@@ -1,7 +1,7 @@
 pipeline {
     agent none 
     stages {
-        stage('Build') { 
+        stage('Deliver') { 
             agent {
                 docker {
                     image 'flask:latest' 
@@ -10,6 +10,11 @@ pipeline {
             steps {
                 sh 'python /home/flasktest/main.py' 
             }
+        }
+        post {
+        success {
+            echo "success"
+        }
         }
     }
 }
