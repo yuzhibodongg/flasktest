@@ -10,11 +10,12 @@ pipeline {
             steps {
                 sh 'python /home/flasktest/main.py' 
             }
-        }
-        post {
-        success {
-            echo 'success'
-        }
+
+            post {
+                    success {
+                        echo 'success'
+                    }
+            }
         }
     }
 }
