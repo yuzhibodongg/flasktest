@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'python /home/flasktest/main.py' 
+                sh 'nohup python /home/flasktest/main.py &' 
             }
 
             post {
